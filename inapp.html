@@ -9,13 +9,21 @@
     <script>
         var standalone = window.navigator.standalone,
         userAgent = window.navigator.userAgent.toLowerCase(),
+        safari = /safari/.test( userAgent ),
         ios = /iphone|ipod|ipad/.test( userAgent );
     
     if( ios ) {
-        if ( standalone) {
+               //false(cuz standalone)       true   
+        if ( !standalone && safari ) {
+            //not standalone and safari ,
             document.getElementById( 'where-am-i' ).textContent = 'browser';
             
-        } else if ( !standalone) {
+        } else if ( standalone && !safari ) {
+            //not inside inapp and not safari
+            document.getElementById( 'where-am-i' ).textContent = 'standalone';
+            
+        } else if ( !standalone && !safari ) {
+            //someother engine with inapp
             document.getElementById( 'where-am-i' ).textContent = 'uiwebview';
             
         };
