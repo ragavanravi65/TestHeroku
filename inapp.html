@@ -1,0 +1,37 @@
+<html>
+<body>
+    
+    <div id="where-am-i"></div>
+</body>
+
+
+
+    <script>
+        var standalone = window.navigator.standalone,
+        userAgent = window.navigator.userAgent.toLowerCase(),
+        ios = /iphone|ipod|ipad/.test( userAgent );
+    
+    if( ios ) {
+        if ( standalone) {
+            document.getElementById( 'where-am-i' ).textContent = 'browser';
+            
+        } else if ( !standalone) {
+            document.getElementById( 'where-am-i' ).textContent = 'uiwebview';
+            
+        };
+        
+    } else {
+        
+        document.getElementById( 'where-am-i' ).textContent = 'not iOS';
+        
+    };
+    
+    
+    </script>
+</html>
+
+
+
+
+
+
