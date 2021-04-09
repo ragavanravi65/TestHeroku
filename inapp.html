@@ -7,33 +7,23 @@
 
 
     <script>
-        var standalone = window.navigator.standalone,
-        userAgent = window.navigator.userAgent.toLowerCase(),
-        safari = /safari/.test( userAgent ),
-        ios = /iphone|ipod|ipad/.test( userAgent );
-    
-    if( ios ) {
-               //false(cuz standalone)       true   
-        if ( !standalone && safari ) {
-            //not standalone and safari ,
-            document.getElementById( 'where-am-i' ).textContent = 'browser';
-            
-        } else if ( standalone && !safari ) {
-            //not inside inapp and not safari
-            document.getElementById( 'where-am-i' ).textContent = 'standalone';
-            
-        } else if ( !standalone && !safari ) {
-            //someother engine with inapp
-            document.getElementById( 'where-am-i' ).textContent = 'uiwebview';
-            
-        };
-        
-    } else {
-        
-        document.getElementById( 'where-am-i' ).textContent = 'not iOS';
-        
-    };
-    
+    var standalone = window.navigator.standalone,
+    userAgent = window.navigator.userAgent.toLowerCase(),
+    safari = /safari/.test( userAgent ),
+    ios = /iphone|ipod|ipad/.test( userAgent );
+
+if( ios ) {
+    // if ( !standalone && safari ) {
+    //     //browser
+    // } else if ( standalone && !safari ) {
+    //     //standalone
+    // } else if ( !standalone && !safari ) {
+    //     //uiwebview
+    // };
+    window.open("https://www.youtube.com/","youtube")
+} else {
+    //not iOS
+};
     
     </script>
 </html>
